@@ -1,2 +1,8 @@
 [my_servers]
-local_server ansible_host=localhost
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!! REPLACE EVERYTHING BELOW WITH YOUR REAL REMOTE SERVER DETAILS !!!
+# !!!   ansible_host              -> the server's PUBLIC IP or DNS name
+# !!!   ansible_user              -> the SSH login user on that server
+# !!!   ansible_ssh_private_key_file -> path to the PRIVATE SSH KEY on THIS machine
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+remote_server ansible_host=31.77.146.182 ansible_user=root ansible_ssh_private_key_file=~/.ssh/id_ed25519
