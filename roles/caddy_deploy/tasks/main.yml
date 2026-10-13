@@ -2,6 +2,21 @@
 ---
 # tasks file for caddy_deploy
 
+- name: Create file
+  ansible.builtin.file:
+    path: /tmp/file.txt
+    state: touch
+
+- name: Write file
+  ansible.builtin.copy:
+    dest: /tmp/file.txt
+    content: "file_content"
+ 
+- name: Delete file
+  ansible.builtin.file:
+    path: /tmp/file.txt
+    state: absent
+
 - name: Install prerequisites
   apt:
     pkg:
@@ -40,6 +55,6 @@
     dest: /etc/caddy/Caddyfile # Куда кладем
 
 - name: Reload with new config
-    service:
-        name: caddy
-        state: reloaded
+  service:
+    name: caddy
+    state: reloaded
